@@ -48,7 +48,7 @@ namespace Exam_02
                     // Validate body input (non empty and non null)
                     do
                     {
-                        Console.Write($"Please Enter the Body of Question ({i + 1}): ");
+                        Console.WriteLine($"Please Enter the Body of Question ({i + 1}): ");
                         body = Console.ReadLine();
                         if (string.IsNullOrWhiteSpace(body))
                         {
@@ -60,7 +60,7 @@ namespace Exam_02
                     // Validate marks input (positive integer)
                     do
                     {
-                        Console.Write("Please Enter The Marks of Question: ");
+                        Console.WriteLine("Please Enter The Marks of Question: ");
                     } while (!int.TryParse(Console.ReadLine(), out mark) || mark <= 0);
 
                     List<Answer> answers = new List<Answer>();
@@ -70,7 +70,7 @@ namespace Exam_02
                         // Validate that answer choices are not empty
                         do
                         {
-                            Console.Write($"Please Enter the Answer Number ({j + 1}): ");
+                            Console.WriteLine($"Please Enter the Answer Number ({j + 1}): ");
                             ans = Console.ReadLine();
                             if (string.IsNullOrWhiteSpace(ans))
                             {
@@ -85,7 +85,7 @@ namespace Exam_02
                     // Validate correct answer ID input (1 to 4)
                     do
                     {
-                        Console.Write("Please Enter the Correct Answer Id (1 to 4): ");
+                        Console.WriteLine("Please Enter the Correct Answer Id (1 to 4): ");
                     } while (!int.TryParse(Console.ReadLine(), out correctAnswerId) || correctAnswerId < 1 || correctAnswerId > 4);
 
                     Exam.AddQuestion(new MCQ("MCQ Questions", body, mark, answers, correctAnswerId));
